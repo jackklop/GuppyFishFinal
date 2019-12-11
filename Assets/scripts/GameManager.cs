@@ -70,11 +70,13 @@ public class GameManager : MonoBehaviour
      void OnEnable()
     {
         CountdownText.OnCountdownFinished += OnCountdownFinished;
+        TapController.OnPlayerScored += OnPlayerScored;
         TapController.OnPlayerDied += OnPlayerDied;
     }
      void OnDisable()
     {
         CountdownText.OnCountdownFinished -= OnCountdownFinished;
+        TapController.OnPlayerScored -= OnPlayerScored;
         TapController.OnPlayerDied -= OnPlayerDied;
     }
     void OnCountdownFinished()
@@ -85,7 +87,7 @@ public class GameManager : MonoBehaviour
         gameOver = false;
 
     }
-    void OnPlayerDied()
+     void OnPlayerDied()
     {
         gameOver = true;
         int savedScore = PlayerPrefs.GetInt("HighScore"); //Get high score
