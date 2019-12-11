@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject countdownPage;
     public Text scoreText;
    // Rigidbody2D rigidBody = new Rigidbody2D();
-    enum PageState
+    public enum PageState
     {
         None,
         Start,
@@ -28,15 +28,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        //SetPageState(PageStart.start);
     }
     private void Awake()
     {
         Instance = this;
-        startPage.SetActive(true);
-        
+        SetPageState(PageState.Start);
+
         //rigidBody = GetComponent<Rigidbody2D>(); //gets component of object
-       // rigidBody.simulated = false;
+        // rigidBody.simulated = false;
     }
 
     // Update is called once per frame

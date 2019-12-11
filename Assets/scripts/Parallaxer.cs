@@ -72,6 +72,7 @@ public class Parallaxer : MonoBehaviour
 
      void Update()
     {
+        
         if (game.GameOver) return;
         Shift();
         spawnTimer += Time.deltaTime; //Counts time
@@ -90,9 +91,11 @@ public class Parallaxer : MonoBehaviour
         for (int i = 0; i < poolObjects.Length; i++)
         { 
             GameObject go = Instantiate(PreFab) as GameObject; //Instantiate (only once) and set it as type GameObject
+            go.SetActive(true);
             Transform t = go.transform; //set transform
             t.SetParent(transform); //t should set parent to current object because script is on all parent object
             t.position = Vector3.one * 1000; // Initialize it off screen
+       
             poolObjects[i] = new PoolObject(t);
         }
         if (spawnImmediate)
