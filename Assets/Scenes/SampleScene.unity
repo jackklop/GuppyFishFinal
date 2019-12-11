@@ -215,7 +215,6 @@ GameObject:
   - component: {fileID: 107555954}
   - component: {fileID: 107555953}
   - component: {fileID: 107555955}
-  - component: {fileID: 107555956}
   - component: {fileID: 107555957}
   - component: {fileID: 107555963}
   - component: {fileID: 107555962}
@@ -223,6 +222,7 @@ GameObject:
   - component: {fileID: 107555960}
   - component: {fileID: 107555959}
   - component: {fileID: 107555958}
+  - component: {fileID: 107555956}
   m_Layer: 0
   m_Name: Fish
   m_TagString: Untagged
@@ -313,32 +313,46 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &107555956
-BoxCollider2D:
+--- !u!68 &107555956
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107555952}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.010847092}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 5.12, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.12, y: 2.191224}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -2.56, y: 0}
+  - {x: -2.001922, y: -0.5964855}
+  - {x: -2.4398916, y: 0.14386803}
+  - {x: -1.9834124, y: 0.5983601}
+  - {x: -1.1165227, y: 0.93931174}
+  - {x: 0.10221098, y: 1.1019224}
+  - {x: -1.347712, y: -0.45695865}
+  - {x: -1.6195238, y: -0.7682784}
+  - {x: -1.0976888, y: -0.89467007}
+  - {x: -0.349701, y: -1.152298}
+  - {x: 0.28643656, y: -1.0802315}
+  - {x: 0.13990504, y: -0.8598608}
+  - {x: 1.3088727, y: -0.21244967}
+  - {x: 2.5323956, y: -0.6902645}
+  - {x: 2.028471, y: -0.032594305}
+  - {x: 1.1082779, y: 0.028499817}
+  - {x: 0.028102685, y: 0.8583457}
+  - {x: -0.052086726, y: 0.6882303}
+  - {x: 0.14327893, y: 0.86406875}
+  - {x: 0.97152203, y: 0.45606717}
+  - {x: 1.3509111, y: 0.12170371}
+  - {x: 2.473637, y: 0.7842578}
+  - {x: 2.3198426, y: 0.3378535}
+  - {x: 2.4955928, y: 0.7938047}
 --- !u!114 &107555957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,7 +456,7 @@ EdgeCollider2D:
   m_Points:
   - {x: -2.56, y: 0}
   - {x: -2.4355292, y: 0.15035188}
-  - {x: 2.5193532, y: -0.7051272}
+  - {x: 2.1420977, y: -0.16154371}
 --- !u!68 &107555963
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -460,7 +474,7 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: -2.1840203, y: -0.562196}
-  - {x: 2.5904844, y: 0.80994284}
+  - {x: 1.3298985, y: 0.2145895}
 --- !u!1 &425286265
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +780,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.10166667}
   m_AnchorMax: {x: 0.5, y: 0.16333334}
-  m_AnchoredPosition: {x: 0, y: -6.75}
+  m_AnchoredPosition: {x: 0, y: -6.5}
   m_SizeDelta: {x: 100, y: 13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &552684159
