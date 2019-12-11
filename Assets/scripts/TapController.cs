@@ -20,8 +20,11 @@ public class TapController : MonoBehaviour
     Quaternion upRotation;
     Quaternion forwardRotation;
 
-   // public Text scoreText;
-   // public int score;
+    public AudioSource tapAudio;
+    public AudioSource scoreAudio;
+    public AudioSource dieAudio;
+    // public Text scoreText;
+    // public int score;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +64,7 @@ public class TapController : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0)) //left click on mouse OR tap on phone
         {
+            tapAudio.Play();
             transform.rotation = forwardRotation; //Rotates up every time it is tapped
             rigidBody.velocity = Vector3.zero; //sets gravity to 0 first
             rigidBody.AddForce(Vector2.up * tapForce, ForceMode2D.Force); //adds force up direction
@@ -72,7 +76,8 @@ public class TapController : MonoBehaviour
     {
         if (col.gameObject.tag == "ScoreZone")
         {
-            
+
+            scoreAudio.Play();
            // scoreText.text = score.ToString();
             
             OnPlayerScored();
@@ -80,6 +85,7 @@ public class TapController : MonoBehaviour
         }
         if (col.gameObject.tag == "DeadZone")
         {
+            dieAudio.Play();
             rigidBody.simulated = false;
             OnPlayerDied();
           //  dieSound.Play();

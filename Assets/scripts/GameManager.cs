@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPage;
     public GameObject countdownPage;
     public Text scoreText;
-   // Rigidbody2D rigidBody = new Rigidbody2D();
+    // Rigidbody2D rigidBody = new Rigidbody2D();
+
+ 
     public enum PageState
     {
         None,
@@ -23,7 +25,7 @@ public class GameManager : MonoBehaviour
         Countdown
     }
     int score = 0;
-    bool gameOver = false;
+    bool gameOver = true;
     public bool GameOver {  get { return gameOver; } } //other classes can get gameOver but cannot modify
     // Start is called before the first frame update
     void Start()
@@ -94,6 +96,7 @@ public class GameManager : MonoBehaviour
     }
      void OnPlayerDied()
     {
+        
         gameOver = true;
         int savedScore = PlayerPrefs.GetInt("HighScore"); //Get high score
         if (score > savedScore) //check if current score is higher
@@ -104,6 +107,7 @@ public class GameManager : MonoBehaviour
     }
     void OnPlayerScored()
     {
+       
         score++;
         scoreText.text = score.ToString();
     }
