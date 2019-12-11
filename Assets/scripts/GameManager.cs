@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPage;
     public GameObject countdownPage;
     public Text scoreText;
-
+   // Rigidbody2D rigidBody = new Rigidbody2D();
     enum PageState
     {
         None,
@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        startPage.SetActive(true);
+        
+        //rigidBody = GetComponent<Rigidbody2D>(); //gets component of object
+       // rigidBody.simulated = false;
     }
 
     // Update is called once per frame
