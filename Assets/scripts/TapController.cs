@@ -16,14 +16,14 @@ public class TapController : MonoBehaviour
     public Vector3 startPos = new Vector3(-3, 1,0);
 
     Rigidbody2D rigidbody = new Rigidbody2D();
-    Quaternion downRotation;
+    Quaternion upRotation;
     Quaternion forwardRotation;
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>(); //gets component of object
-        downRotation = Quaternion.Euler(0, 0, -90); //down rotation for falling
-        forwardRotation = Quaternion.Euler(0, 0, -35);//up rotation for taps
+        upRotation = Quaternion.Euler(0, 0, -270); //up rotation for floating up
+        forwardRotation = Quaternion.Euler(0, 0, -35);//down rotation for taps
         game = GameManager.Instance;
 
     }
@@ -61,7 +61,7 @@ public class TapController : MonoBehaviour
             rigidbody.AddForce(Vector2.up * tapForce, ForceMode2D.Force); //adds force up direction
         }
         //Lerp is going from source value to target value over certain amount of time
-        transform.rotation = Quaternion.Lerp(transform.rotation, downRotation, tiltSmooth * Time.deltaTime); //First value is current, second is target, third is how fast
+        transform.rotation = Quaternion.Lerp(transform.rotation, upRotation, tiltSmooth * Time.deltaTime); //First value is current, second is target, third is how fast
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
